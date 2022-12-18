@@ -9,7 +9,4 @@ jobs:
       - name: create post on sanity cron job
         run: |
           curl --location --request POST 'https://blog-nextjs-sanity-five-alpha.vercel.app/api/cron-example' \
-          --header 'Authorization: Bearer ${{ secrets.PRIVATE_KEY_GITHUB_ACTIONS }}' \
-          --header 'Content-Type: application/json'
-
-
+          --header 'Authorization: Bearer ${{ secrets.PRIVATE_KEY_GITHUB_ACTIONS }}'
