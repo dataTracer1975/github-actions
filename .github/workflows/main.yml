@@ -1,0 +1,19 @@
+name: Hourly cron job
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create post on sanity cron job
+        run: |
+          curl --location --request POST 'http://localhost:3000/api/cron-example' \
+          --header 'Content-Type: application/json' \
+          --data-raw '{
+              "title": "Pre-emptive mobile parallelism",
+              "slug": "Upgradable regional emulation"
+          }'
+
+
+
