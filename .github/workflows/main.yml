@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: create post on sanity cron job
         run: |
-          curl --location --request POST 'http://localhost:3000/api/cron-example' \
+          curl --location --request POST 'https://blog-nextjs-sanity-five-alpha.vercel.app/api/cron-example' \
           --header 'Content-Type: application/json' \
           --data-raw '{
               "title": "Pre-emptive mobile parallelism",
