@@ -10,3 +10,10 @@ jobs:
         run: |
           curl --location --request POST 'https://blog-nextjs-sanity-five-alpha.vercel.app/api/cron-example' \
           --header 'Authorization: Bearer ${{secrets.PRIVATE_KEY_GITHUB_ACTIONS}}'
+  fetch-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create post on sanity cron job
+        run: |
+          curl --location --request GET 'https://finance-nextjs-sanity.vercel.app/api/prices' \
+          --header 'Authorization: Bearer ${{secrets.PRIVATE_KEY_GITHUB_ACTIONS}}'
